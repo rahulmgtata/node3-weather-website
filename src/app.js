@@ -5,6 +5,7 @@ const hbs = require('hbs')
 const publicDirectoryPath = path.join(__dirname, '../public')
 console.log("publicDirectoryPath : "+publicDirectoryPath)
 const app = express()
+const port = process.env.PORT || 3000
 
 //Import for forecast and geocode
 const geocode = require('./utils/geocode')
@@ -138,6 +139,6 @@ app.get('*', (req, resp) => {
         })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up onport 3000')
+app.listen(port, () => {
+    console.log('Server is up onport '+port)
 })
