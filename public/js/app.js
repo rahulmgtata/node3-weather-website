@@ -7,7 +7,6 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => {
 })
 
 
-
 // If we do as below the page will be re-freshed.
 // const weatherForm = document.querySelector('form')
 // weatherForm.addEventListener('submit', () => {

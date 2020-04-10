@@ -86,7 +86,7 @@ app.get('/weather', (req, res) => {
             console.log("Error ...GEOCODE")
             return res.send({ error })
         } 
-        // console.log(JSON.stringify(latitude))
+      
         // console.log(JSON.stringify(logitude))
 
         forecast(JSON.stringify(latitude), JSON.stringify(logitude), (error, data) => {
