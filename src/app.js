@@ -97,7 +97,8 @@ app.get('/weather', (req, res) => {
             res.send({
                 location: data.location,
 				time: data.time,
-				temperature: data.temperature
+                temperature: data.temperature,
+                weatherDescription: data.weatherDescription
             })
             console.log("Error " +error)
             console.log("Data " +data)

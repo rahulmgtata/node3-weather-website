@@ -24,7 +24,8 @@ const forecast = (latitude, longitude, callback) => {
 			callback( undefined, {
 				location: body.location.name,
 				time: body.current.observation_time,
-				temperature: body.current.temperature
+				temperature: body.current.temperature,
+				weatherDescription: body.current.weather_descriptions
 			})
 		}
 	})

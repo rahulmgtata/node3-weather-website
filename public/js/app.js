@@ -20,6 +20,7 @@ const search = document.querySelector('input')
 
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2') 
+const message3 = document.querySelector('#message-3') 
 
 weatherForm.addEventListener('submit', (e) => {
     //THis will restrict page reload
@@ -28,6 +29,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value
     message1.textContent = 'Loading ....'
     message2.textContent = ''
+    message3.textContent = ''
     //USe http://localhost:3000/weather?address to test locally 
     fetch('/weather?address='+location).then((response) => {
         response.json().then((data) => {
@@ -37,8 +39,9 @@ weatherForm.addEventListener('submit', (e) => {
                
             } else {
                 console.log(data.location+ "  "+data.temperature)
-                message1.textContent = data.location
-                message2.textContent =  data.temperature
+                message1.textContent = data.location + " at " + data.time
+                message2.textContent = "Temperature is " + data.temperature
+                message3.textContent =  "Weather is " + data.weatherDescription
                
             }
        })
